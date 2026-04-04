@@ -55,12 +55,16 @@ pipeline {
       environment {
         GIT_REPO_NAME = "springboot-app"
         GIT_USER_NAME = "lavit797"
+
       }
       steps {
         withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
           sh '''
             git config user.email "lavittyagi2004@gmail.com"
             git config user.name "Lavit Tyagi"
+            git config --global --add safe.directory "*"
+
+            cd /var/lib/jenkins/workspace/jenkins
 
             # Always reset to latest version from remote to avoid stale sed
             git fetch origin main
