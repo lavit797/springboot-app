@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: tyagilavit/spring-boot-app:13
+        image: tyagilavit/spring-boot-app:4
         ports:
         - containerPort: 8080
